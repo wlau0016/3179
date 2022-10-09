@@ -17,14 +17,20 @@
 
 <body>
     
-    <h1> Ratings & Price of Hostels in Japan </h1>
+    <h2> Ratings & Price of Hostels in Japan </h2>
 
     <div id = "symbol_map"></div>
 
+    <h2> Visitor Arrivals in Japan </h2>
+    <div id = "choro_map"></div>
+
     <script type="text/javascript">
 
-        var spec2 = "symbolmap.vg.json";
+        var spec2 = "./symbolmap.vg.json";
+        var spec3 = "./barchart.vg.json";
+        
         vegaEmbed('#symbol_map', spec2).then(function(result) {}).catch(console.error);
+        vegaEmbed('#choro_map', spec3).then(function(result) {}).catch(console.error);
 
     </script>
 

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1500,
+    "height": 500,
+    "data": {
+      "url": "./Visitors_to_Japan.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Country", "type": "nominal", "axis": {"labelAngle": 0}},
+      "y": {"field": "Visitors", "type": "quantitative"}
+    }
+  }
