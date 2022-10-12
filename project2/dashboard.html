@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang = "en">
 
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+    <title> FIT3179 Project 2 </title>
+
+    <!-- Pure Css library -->
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity = "sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    
+    <!-- Grid layout -->
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css" />
+
+    <!-- Font Type -->
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Acme&family=Anton&family=Arvo&family=Boogaloo&family=Exo+2:wght@600&family=Josefin+Sans&family=Lato:wght@900&family=Open+Sans:wght@500&family=Poppins:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Website Icon -->
+    <link rel = "icon" href = "images/website_icon.ico">
+
+    <!-- Icon library -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel = "stylesheet">
+
+    <!-- Flow map - AnyChart library -->
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/latest/custom/world/world.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-data-adapter.min.js"></script>
+
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Style.css imported -->
+    <link rel = "stylesheet" href = "styles.css"/>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <a href = "#" class = "logo"> 
+            Japan Tourism
+            <img src = "images/japan_flag.png" height = "40"/>
+        </a> 
+        <ul>
+            <li><a href = "#"> Home </a></li>
+            <li><a href = "#empty_1"> About </a></li>
+            <li><a href = "#empty_2"> Visitors </a></li>
+            <li><a href = "#empty_3"> Prefecture </a></li>
+            <li><a href = "#empty_4"> Cuisine </a></li>
+            <li><a href = "#empty_5"> Travel Spending </a></li>
+        </ul>
+    </header>
+
+    <!-- Content Area -->
+
+    <!-- First row (Fuji Scenery) -->
+    <div class = "pure-g">
+        <div class = "pure-u-1" id = "scenery">
+            <img src = "images/fuji.jpeg">
+            <p class = "welcome_subtitle"> &nbspExplore <br> <span class = "japan_subtitle"> Japan  </span></p>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_1"></div>
+
+    <!-- Second row (About) -->
+    <div class = "pure-g">
+        <div class = "pure-u-1" id = "about">
+            <h2> About Japan Tourism </h2>
+            <p> 
+                Japan is the most amazing tourist destination and it offers many unique experiences that you cannot find in any other part of the world. 
+                The culture of this country is an interesting blend of Eastern traditions and Western modernity that can be seen everywhere. 
+                Japan is one of the oldest civilizations and has a beautiful and diverse history. 
+                The stunning, diverse scenery with mountains and breathtaking views, which are much appreciated by the Japanese, offers so many different experiences that attract tourists from all corners of the world.
+                In this dashboard, it gives you the visualisations in tourism for your reference to make an interesting and enjoyable trip to this amazing country at least once in your lifetime.
+            </p>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_2"></div>
+
+    <!-- Third Row (Flow Map Subtitle) -->
+    <div class = "pure-g">
+        <div class = "pure-u-1">
+            <h2 id = flowmap_subtitle> Visitor Arrivals to Japan By Country </h2>
+            <hr id = "divider_line_1">
+        </div>
+    </div>
+
+    <!-- Fourth row (Flow Map) -->
+    <div class = "pure-g">
+        <div class = "pure-u-18-24">
+            <div id = "flowmap"></div>
+        </div>
+        <div class = "pure-u-6-24">
+            <p id = "flowmap_description"> From the map visualisation, most of the visitors come from South East Asia.
+                Vietnamese contribute to the largest number of visitors, <span id = "most_visitor"> 104,860</span>. 
+                In contrast, except for United States, fewer visitors from the European countries visit Japan in 2022. 
+                This may be due to the large distance gap between their countries and Japan or the expensive flight.
+                For example, there are only <span id = "least_visitor"> 1,011</span> Mexican visit Japan.
+                <br><br><br>
+                <span id = "note_text"> Note: Middle East includes Israel, Turkey and the Gulf Cooperation Council countries 
+                    (Saudi Arabia, United Arab Emirates, Bahrain, Oman, Qatar and Kuwait).
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_3"></div>
+
+    <!-- Fifth row (Choropleth Map Subtitle) -->
+    <div class = "pure-g">
+        <div class = "pure-u-1">
+            <h2 id = "choroplethmap_subtitle"> Visit Rate of Prefecture </h2>
+            <hr id = "divider_line_2">
+        </div>
+    </div>
+
+    <!-- Sixth row (Top 5 Prefecture description subtitle) -->
+    <div class = "pure-g">
+        <div class = "pure-u-1">
+            <h4 id = "prefecture_title"> Top 5 Visit Rate of Prefecture </h4>
+        </div>
+    </div>
+
+    <!-- Seventh row (Top 5 Prefecture description) -->
+    <div class = "pure-g" id = "outer">
+        <div class = "inner">
+            <a href = "https://www.japan-guide.com/e/e2164.html" class = "reference">
+                <div class = "inner_container">
+                    <img src = "images/tokyo.jpg">
+                    <h3> Tokyo </h3>
+                    <p> 
+                        Tokyo have a lot of tourist spots like Shinjuku Gyoen National Garden, Meiji Jingu Shrine, Asakusa.
+                        Furthermore, you can also enjoy walking on street of Shibuya, Harajuku and Ginza to see latest trend fashion.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class = "inner">
+            <a href = "https://www.japan-guide.com/e/e2157.html" class = "reference">
+                <div class = "inner_container">
+                    <h3> Osaka </h3>
+                    <p> Osaka is the secondary biggest metropolitan area in Japan. We have a lot of must-see spots in Osaka; 
+                        for example, Osaka Castle,  Dotonbori, Shinsekai, Umeda , Shinsaibashi, Bay area and so on.
+                    </p>
+                    <img src = "images/osaka.jpg" id = "osaka">
+                </div>
+            </a>
+        </div>
+
+        <div class = "inner">
+            <a href = "https://www.japan-guide.com/list/e1212.html" class = "reference">
+                <div class = "inner_container">
+                    <img src = "images/Chiba.webp">
+                    <h3> Chiba </h3>
+                    <p> Chiba Prefecture is located east of Tokyo.  
+                        A large part of the prefecture is made up of the rural Boso Peninsula which is a popular resort destinations for Tokyoites.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class = "inner">
+            <a href = "https://www.japan-guide.com/e/e2158.html" class = "reference">
+                <div class = "inner_container">
+                    <h3> Kyoto </h3>
+                    <p> There are a lot of Shrines & Temples like Kiyomizu-dera, Kinkakuji, Fushimi Inari-taisya Shrine at Kyoto. 
+                        In addition, it's also have places which are knowed as Japan Travel Symbol like Arashiyama, Gyon.</p>
+                    <img src = "images/kyoto.jpg" id = "kyoto">
+                </div>
+            </a>
+        </div>
+
+        <div class = "inner">
+            <a href = "https://www.japan-guide.com/e/e2165.html" class = "reference">
+                <div class = "inner_container">
+                    <img src = "images/nara.jpg">
+                    <h3> Nara </h3>
+                    <p> Nara is a landlocked prefecture in the Kansai Region, is the cradle of the Japanese civilization. 
+                        Many of the early emperors built their palaces in Nara Prefecture, formerly known as Yamato.  
+                    </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Choropleth map -->
+    <div class = "pure-g">
+        <div class = "pure-u-1" id = "choropleth_map_container">
+            <div>
+                <div id = "choropleth_map"></div>
+                <img src = "images/tour_guider.webp" id = "tour_guider">
+                <img src = "images/pin.png" id = "pin_1">
+                <img src = "images/pin.png" id = "pin_2">
+                <img src = "images/pin.png" id = "pin_3">
+                <img src = "images/pin.png" id = "pin_4">
+                <img src = "images/pin.png" id = "pin_5">
+                <div class = "box tokyo"> 
+                    Tokyo 
+                    <span class = "tooltiptext"> Rank: 1 </span>
+                </div>
+                <div class = "box osaka"> 
+                    Osaka 
+                    <span class = "tooltiptext"> Rank: 2 </span>
+                </div>
+                <div class = "box chiba"> 
+                    Chiba 
+                    <span class = "tooltiptext"> Rank: 3 </span>
+                </div>
+                <div class = "box kyoto"> 
+                    Kyoto 
+                    <span class = "tooltiptext"> Rank: 4 </span>
+                </div>
+                <div class = "box nara"> 
+                    Nara 
+                    <span class = "tooltiptext"> Rank: 5 </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_4"></div>
+
+    <!-- Cuisine Title-->
+    <div class = "pure-g">
+        <div class = 'pure-u-1'>
+            <h2 id = "cuisine_subtitle"> Japanese Cuisine Ranking </h2>
+            <hr id = "divider_line_3">
+        </div>
+    </div>
+
+    <!-- Cuisine ranking -->
+    <div class = "pure-g" id = "cuisine_ranking">
+        <!-- Description -->
+        <div class = "pure-u-1-4">
+            <p id = "bump_chart_description">
+                From this bump chart, <span id = "sushi">Sushi</span> seems to be the most popular Japanese cuisine from the foreigners as <span id = "sushi">Sushi</span> is always
+                the one that spring to the mind when we think about Japanese cuisine. All the Japanese food have an increasing trend 
+                over the years, but surprisingly, except for <span id = "unagi">Unagi</span>, it is the only one having decreasing trend 
+                from 2018 to 2022. In contrast, <span id = "yakitori">Yakitori</span> has significantly increased to Rank 4 in 2022.
+            </p>
+        </div>
+
+        <!-- Bump Chart-->
+        <div class = "pure-u-3-4">
+            <div id = "bump_chart"></div>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_5"></div>
+
+    <!-- Travel Spending Title-->
+    <div class = "pure-g">
+        <div class = "pure-u-1">
+            <h2 id = "travel_subtitle"> Travel Spending of foreign traveller </h2>
+            <hr id = "divider_line_4">
+        </div>
+    </div>
+
+    <!-- Travel Spending -->
+    <div class = "pure-g" id = "line_chart_container">
+        <!-- Travel Spending Business -->
+        <div class = "pure-u-3-4">
+            <div id = "line_chart"></div>
+        </div>
+
+        <!-- Travel Spending Description -->
+        <div class = "pure-u-1-4">
+            <p id = "travel_description"> 
+                Overall, we can see that the travel spending of <span id = "leisure">Leisure</span> is slightly more than 
+                the travel spending of <span id = "business">Business</span>. This may be due to the traveller buying a lot of 
+                souvenirs from the tourist attractions. Furthermore, the consumption cost of those tourist attractions is definitely
+                higher than the ordinary places. In constrast, the <span id = "business">Business</span> traveller mostly spend their money on
+                transportation, food and drinks and accommodation.
+            </p>
+        </div>
+    </div>
+
+    <div class = "pure-g" id = "divider_5">
+        <div class = "pure-u-1">
+            <hr id = "divider_line_5">
+        </div>
+    </div>
+
+    <!-- Author information -->
+    <div class = "pure-g" id = "author_container">
+        <div class = "pure-u-1">
+            <button class = "accordion"> <span> Author Information </span> </button>
+            <div class = 'panel'>
+                <p>
+                    <span class = "detail"> Name: Lau Wei Jie </span>
+                    <span class = "detail"> Student ID: 31836267 </span>
+                    <span class = "detail"> Project: FIT3179 Project 2 </span>
+                    <span class = "detail"> Time: Semester 2 2022 </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "pure-g">
+        <div class = "pure-u-1">
+            <hr id = "divider_line_6">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src = "function.js"></script>
+
+</body>
+
+</html>

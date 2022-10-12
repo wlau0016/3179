@@ -1,0 +1,651 @@
+html, body {
+    background: #fff;
+    min-height: 250vh;
+    scroll-behavior: smooth;
+}
+
+.important_text {
+    text-transform: bolder;
+    color: rgba(34, 68, 239, 0.976);
+}
+
+.accordion {
+    background-color: rgba(7, 6, 81, 0.79);
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: 'Lato', sans-serif;
+}
+
+.accordion span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.accordion span:after {
+    content: '\FE3E';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+.accordion:hover span {
+    padding-right: 40px;
+}
+
+.accordion:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.active, .accordion:hover {
+    background-color: rgba(7, 6, 81, 0.79);
+}
+
+.panel {
+    border:none;
+    outline: none;
+    padding: 0 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 19px;
+    background-color: rgba(7, 6, 81, 0.79);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.detail{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 15px 100px;
+    z-index: 100000;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.pure-g img {
+    width: 99vw;
+    height: 34vw;
+}
+
+.pure-u-1 #scenery{
+    position:relative;
+    text-align:center;
+}
+
+.welcome_subtitle {
+    position: absolute;
+    transform: translate(148%,-300%);
+    color: #fff;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 53px;
+}
+
+.japan_subtitle {
+    font-size: 80px;
+    font-family: 'Lato', sans-serif;
+}
+
+#empty_1{
+    position:relative;
+    top: -66px;
+}
+
+#about{
+    transform: translateY(-1%);
+    background: url(images/bg-intro.png) center 0 no-repeat;
+    background-size: cover;
+    min-height: 405px;
+    color: #fff;
+}
+
+#about h2{
+    color: #fff;
+    text-align:center;
+    font-size: 20px;
+    border-bottom: none;
+    background: url(images/logo.png) center 0 no-repeat;
+    padding-top: 50px;
+    margin: 45px 0 15px 0;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+#about p {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 320px;
+    margin-right: 320px;
+    font-family: 'Abyssinica SIL', serif;
+    line-height: 35px;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: #EBEBEB;
+}
+
+header .logo {
+    margin-top: 4px;
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    transform: translateY(-20%);
+}
+
+header .logo img {
+    transform: translateY(28%);
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    transition: 0.5s;
+    padding: 6px 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+header ul li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background:#fff;
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+header.sticky ul li a:before{
+    background: #EE7A94;
+}
+
+header ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header.sticky .logo{
+    margin-top: 5px;
+}
+
+header.sticky .logo, header.sticky ul li a {
+    color: #000;
+}
+
+#flowmap {
+    width: 1200px;
+    height: 700px;
+    padding-left:65px;
+}
+
+.anychart-credits {
+    display: none;
+}
+
+#flowmap_subtitle{
+    font-size: 22px;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#divider_line_1{
+    width: 90%;
+    color:#000;
+}
+
+#flowmap_description{
+    margin-right: 80px;
+    margin-top:25px;
+    font-family: 'Abyssinica SIL', serif;
+    line-height: 35px;
+    font-size: 18px;
+}
+
+#most_visitor{
+    font-weight: bolder;
+    color: #1c5eaa;
+}
+
+#least_visitor{
+    font-weight: bolder;
+    color:#FFB36F;
+}
+
+#note_text{
+    font-style:italic;
+}
+
+#empty_2{
+    position:relative;
+    top: -47px;
+}
+
+#choroplethmap_subtitle{
+    font-size: 22px;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+#divider_line_2{
+    width: 90%;
+    color:#000;
+}
+
+#prefecture_title{
+    margin-left: 82px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#outer{
+    margin-left: 75px;
+    margin-right: 25px;
+    display: flexbox;
+}
+
+.inner_container img {
+    width: 287px;
+    height: 175px;
+}
+
+.inner{
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #999999;
+    text-align: left;
+    width: 18%;
+}
+
+.inner_container{
+    margin-bottom: -15px;
+}
+
+.inner_container h3{
+    text-align: center;
+    font-size:21px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Arvo', serif;
+}
+
+.inner p {
+    word-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    padding:10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+#osaka, #kyoto{
+    transform: translateY(-6%);
+}
+
+.reference{
+    text-decoration: none;
+    color:#000;
+}
+
+#empty_3 {
+    position:relative;
+    top: -40px;
+}
+
+#choropleth_map_container{
+    text-align: center;
+    position:relative;
+}
+
+#choropleth_map{
+    margin-top: 50px;
+    margin-right: 65px;
+}
+
+#tour_guider{
+    width: 225px;
+    height: 375px;
+    position:absolute;
+    transform: translate(-625%, 60%);
+}
+
+#pin_1{
+    width: 18px;
+    height: 24px;
+    position:absolute;
+    top: 412px;
+    left: 790px;
+}
+
+#pin_2{
+    width: 18px;
+    height: 24px;
+    position:absolute;
+    top: 438px;
+    left: 790px;
+}
+
+#pin_3{
+    width: 18px;
+    height: 24px;
+    position:absolute;
+    top: 450px;
+    left: 803px;
+}
+
+#pin_4{
+    width: 18px;
+    height: 24px;
+    position:absolute;
+    top: 400px;
+    left: 902px;
+}
+
+#pin_5{
+    width: 18px;
+    height: 24px;
+    position:absolute;
+    top: 407px;
+    left: 925px;
+}
+
+.box {
+    transition: box-shadow .3s;
+    width: 60px;
+    height: 5px;
+    background-color: #ce3353;
+    color: #fff;
+    padding: 20px;
+    padding-top: 10px;
+    position: absolute;
+    margin: 40px;
+    text-align: center;
+}
+
+.box:hover{
+    box-shadow: 0 0 11px rgba(15, 1, 1, 0.848);
+}
+
+.tokyo{
+    top: 345px;
+    left: 950px;
+}
+
+.tokyo:after{
+    content: " ";
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #ce3353;
+    border-left: none;
+    border-bottom: 15px solid transparent;
+}
+
+.chiba{
+    top: 395px;
+    left: 940px;
+}
+
+.chiba:after{
+    content: " ";
+    position: absolute;
+    left: -8px;
+    top: 0px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #ce3353;
+    border-left: none;
+    border-bottom: 15px solid transparent;
+}
+
+.nara{
+    top: 475px;
+    left: 770px;
+}
+
+.nara:after{
+    content: " ";
+    position: absolute;
+    right: 65px;
+    top: -10px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #ce3353;
+}
+
+.osaka{
+    top: 495px;
+    left: 660px;
+}
+
+.osaka:after{
+    content: " ";
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #ce3353;
+}
+
+.kyoto{
+    top: 310px;
+    left: 680px;
+}
+
+.kyoto:after{
+    content: " ";
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+    border-top: 15px solid #ce3353;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+}
+
+#cuisine_subtitle{
+    font-size: 22px;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+#divider_line_3{
+    width:90%;
+    color: #000;
+}
+
+.box .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.box .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.box:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+#cuisine_ranking{
+    margin-top: 30px;
+}
+
+#bump_chart_description{
+    font-family: 'Abyssinica SIL', serif;
+    line-height: 35px;
+    font-size: 18px;
+    margin-left: 83px;
+    margin-top: 0px;
+}
+
+#bump_chart{
+    margin-left: 25px;
+}
+
+#unagi{
+    color: #F0722F;
+    font-weight: bolder;
+}
+
+#sushi{
+    color: #F58FBD;
+    font-weight: bolder;
+}
+
+#yakitori{
+    font-weight: bolder;
+    color: #E81149;
+}
+
+#empty_4{
+    position:relative;
+    top: -40px;
+}
+
+#travel_subtitle{
+    font-size: 22px;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding-top: 45px;
+    text-align: center;
+}
+
+#divider_line_4{
+    width: 90%;
+    color: #000;
+}
+
+#line_chart{
+    margin-left: 75px;
+}
+
+#line_chart_container{
+    margin-top: 20px;
+}
+
+#travel_description{
+    font-family: 'Abyssinica SIL', serif;
+    line-height: 35px;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-right: 80px;
+}
+
+#business{
+    font-weight:bolder;
+    color: #2B44E1;
+}
+
+#leisure{
+    font-weight: bolder;
+    color: #EE7314;
+}
+
+#divider_5{
+    margin-top: 30px;
+}
+
+#divider_line_5{
+    color: #000;
+}
+
+#divider_line_6{
+    color: #000;
+}
+
+#author_container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#empty_5{
+    position:relative;
+    top: -20px;
+}
