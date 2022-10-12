@@ -1,1 +1,39 @@
-
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 450,
+  "data": {
+    "url": "data/Cuisine_Ranking.csv"
+  },
+  "layer": 
+  [
+    {
+      "mark": {"type": "line", "interpolate": "monotone" },
+      "encoding": {
+          "color": { "field": "Food" } ,
+          "size":{ "condition":  {"param": "selection_legend", "empty": false, "value": 10},"value": 4}}
+    },
+    {
+      "params": [{"name": "selection_legend", 
+                  "select": {"type": "point", "on": "click", "fields": ["Food"]},
+                  "bind": "legend"}
+                ],
+      "mark": {"type" :"tick", "thickness": 15 },
+      "encoding": {"color": {"condition":  {"param": "selection_legend", "empty": false, "value": "black"} , "field": "Food"}}
+    }
+  ],
+  "encoding": {
+    "x": {"field": "Year", 
+          "type": "ordinal",
+          "axis": { "labelAngle": 0 , "labelFontSize": 12 , "titleFontSize": 14},
+          "title": ""
+          },
+    "y": {"field": "Ranking", 
+          "type": "quantitative",
+          "sort": "descending",
+          "scale": {"domainMin": 1, "domainMax": 14},
+          "axis": { "labelAngle": 0, "labelFontSize": 12, "titleFontSize": 14, "tickMinStep": 1},
+          "title":  "Japanese Cuisine Ranking"
+          }
+  }
+}

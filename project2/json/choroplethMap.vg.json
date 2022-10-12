@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1500,
+    "height": 750,
+    "view": {"stroke": "transparent"},
+    "projection": {"type": "mercator"},
+    "data": {
+        "url": "json/prefectureData.json",
+        "format": {"type": "topojson", "feature": "JPN_adm1"}
+    },
+    "transform": [
+        {
+          "lookup": "properties.NAME_1",
+          "from": {
+            "data": {
+              "url": "data/Visit_rate_prefecture.csv"
+            },
+            "key": "Prefecture",
+            "fields": ["Visit Rate (%)"]
+          }
+        }
+    ],
+    "mark": {"type": "geoshape",
+              "stroke": "#757575",
+              "strokeWidth": 0.5
+          },
+    "encoding": {
+        "color": {
+        "field": "Visit Rate (%)",
+        "type": "quantitative",
+        "scale": {"type": "threshold",
+                    "domain": [1, 5, 10, 20, 30, 40],
+                    "range": ["#F9E789", "#F5D948", "#ECB041","#E88C0E", "#DB5110", "#D41919", "#5F0303"]
+                },
+        "legend": {"labelFontSize": 11, "titleFontSize": 11}
+        },
+    "tooltip": [
+      {"field": "properties.NAME_1", "type": "nominal", "title": "Prefecture"},
+      {"field": "Visit Rate (%)", "type": "quantitative"}
+    ]
+  }
+}
