@@ -10,7 +10,41 @@
     {
       "mark": {"type": "line", "interpolate": "monotone" },
       "encoding": {
-          "color": { "field": "Food" } ,
+          "color": { "field": "Food",
+                      "type":"nominal",
+                      "scale": {
+                        "domain":[
+                          "Sushi",
+                          "Sashimi",
+                          "Tempura",
+                          "Ramen",
+                          "Udon",
+                          "Okonomiyaki",
+                          "Gyoza",
+                          "Japanese Sweets",
+                          "Yakitori",
+                          "Miso Soup",
+                          "Unagi",
+                          "Shabu Shabu",
+                          "Takoyaki"
+                        ],
+                        "range":[
+                          "#F58FBD",
+                          "#F5D60F",
+                          "#7E0B78",
+                          "#8058DC",
+                          "#3B2EDE",
+                          "#2E76DE",
+                          "#0A155C",
+                          "#62E7EE",
+                          "#E81149",
+                          "#D2AE74",
+                          "#F0722F",
+                          "#F49C86",
+                          "#FF0096"
+                        ]
+                      }
+                    } ,
           "size":{ "condition":  {"param": "selection_legend", "empty": false, "value": 10},"value": 4}}
     },
     {

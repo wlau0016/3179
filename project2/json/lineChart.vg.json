@@ -9,8 +9,28 @@
         {
           "encoding": {
             "x": {"field": "Year", "type": "ordinal","axis":{"labelAngle": 0 , "labelFontSize": 12 , "titleFontSize": 14}, "title":""},
-            "y": {"field": "Travel Spending Amount", "type": "quantitative", "axis":{"labelFontSize": 12 , "titleFontSize": 14}},
-            "color": {"field": "Type", "type": "nominal"}
+            "y": {"field": "Overall Spending Amount", "type": "quantitative", "axis":{"labelFontSize": 12 , "titleFontSize": 14}},
+            "color": {"field": "Category", 
+                      "type": "nominal",
+                      "scale":{
+                        "domain":[
+                          "Accommodation",
+                          "Food and drink",
+                          "Transportation",
+                          "Entertainment",
+                          "Shopping",
+                          "Others"
+                        ],
+                        "range":[
+                          "#CA1FF4",
+                          "#04F5F9",
+                          "#E8E50F",
+                          "#661FF4",
+                          "#FC0237",
+                          "#1C4BF8"
+                        ]
+                      }
+                      }
           },
           "layer": [
             {"mark": "line"},
@@ -49,9 +69,9 @@
             },
             {
               "encoding": {
-                "text": {"type": "quantitative", "field": "Travel Spending Amount"},
+                "text": {"type": "quantitative", "field": "Overall Spending Amount"},
                 "x": {"type": "ordinal", "field": "Year"},
-                "y": {"type": "quantitative", "field": "Travel Spending Amount"}
+                "y": {"type": "quantitative", "field": "Overall Spending Amount"}
               },
               "layer": [
                 {
@@ -67,7 +87,7 @@
                 {
                   "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
                   "encoding": {
-                    "color": {"type": "nominal", "field": "Type"}
+                    "color": {"type": "nominal", "field": "Category"}
                   }
                 }
               ]

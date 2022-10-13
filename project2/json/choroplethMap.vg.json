@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 1500,
-    "height": 750,
+    "height": 850,
     "view": {"stroke": "transparent"},
     "projection": {"type": "mercator"},
     "data": {
@@ -30,9 +30,9 @@
         "type": "quantitative",
         "scale": {"type": "threshold",
                     "domain": [1, 5, 10, 20, 30, 40],
-                    "range": ["#F9E789", "#F5D948", "#ECB041","#E88C0E", "#DB5110", "#D41919", "#5F0303"]
+                    "range": ["#F5EB6A", "#EECC69", "#EEAF69","#EE8C48", "#BB6930", "#8C4A1C", "#542A0D"]
                 },
-        "legend": {"labelFontSize": 11, "titleFontSize": 11}
+        "legend": {"labelFontSize": 11, "titleFontSize": 12,"orient": "none","legendX":1300, "legendY":220}
         },
     "tooltip": [
       {"field": "properties.NAME_1", "type": "nominal", "title": "Prefecture"},
