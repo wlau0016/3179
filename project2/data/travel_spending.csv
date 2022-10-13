@@ -1,19 +1,61 @@
-Year,Type,Travel Spending Amount
-2011,Business,116490
-2012,Business,124236
-2013,Business,127014
-2014,Business,146711
-2015,Business,175994
-2016,Business,155017
-2017,Business,150341
-2018,Business,147907
-2019,Business,155281
-2011,Leisure,136115
-2012,Leisure,129494
-2013,Leisure,140243
-2014,Leisure,143802
-2015,Leisure,157334
-2016,Leisure,140961
-2017,Leisure,149742
-2018,Leisure,161265
-2019,Leisure,164005
+Category,Year,Overall Spending Amount
+Accommodation,2010,26700
+Accommodation,2011,30603
+Accommodation,2012,31645
+Accommodation,2013,31775
+Accommodation,2014,37021
+Accommodation,2015,36048
+Accommodation,2016,33634
+Accommodation,2017,32939
+Accommodation,2018,35312
+Accommodation,2019,32814
+Food and drink,2010,18584
+Food and drink,2011,22041
+Food and drink,2012,22767
+Food and drink,2013,23129
+Food and drink,2014,25267
+Food and drink,2015,25794
+Food and drink,2016,26611
+Food and drink,2017,26004
+Food and drink,2018,28190
+Food and drink,2019,26258
+Transportation,2010,7529
+Transportation,2011,10659
+Transportation,2012,11356
+Transportation,2013,10777
+Transportation,2014,12568
+Transportation,2015,15286
+Transportation,2016,14126
+Transportation,2017,14286
+Transportation,2018,13548
+Transportation,2019,13419
+Entertainment,2010,6424
+Entertainment,2011,4016
+Entertainment,2012,3323
+Entertainment,2013,3785
+Entertainment,2014,3598
+Entertainment,2015,4965
+Entertainment,2016,4137
+Entertainment,2017,4458
+Entertainment,2018,5059
+Entertainment,2019,4267
+Shopping,2010,39129
+Shopping,2011,38443
+Shopping,2012,42754
+Shopping,2013,42381
+Shopping,2014,46501
+Shopping,2015,59500
+Shopping,2016,47122
+Shopping,2017,47846
+Shopping,2018,45441
+Shopping,2019,41502
+Others,2010,5521
+Others,2011,741
+Others,2012,535
+Others,2013,110
+Others,2014,292
+Others,2015,28
+Others,2016,224
+Others,2017,314
+Others,2018,30
+Others,2019,27
