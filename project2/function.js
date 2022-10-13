@@ -67,13 +67,13 @@ anychart.onDocumentReady(function () {
             .fontColor('#212121');
 
           // set the thickness of the connector line based on the series
-          if (name === 'More than 100,000') {
+          if (name === 'More than 25%') {
             connectorSeries.startSize(14).endSize(0);
-          } else if (name === '50,000 to 100,000') {
+          } else if (name === '15% to 25%') {
             connectorSeries.startSize(7.5).endSize(1.5);
-          } else if (name === '10,000 to 50,000') {
+          } else if (name === '5% to 15%') {
             connectorSeries.startSize(4.5).endSize(2);
-          } else if (name === '5,000 to 10,000') {
+          } else if (name === '1% to 5%') {
             connectorSeries.startSize(2.5).endSize(2);
           } else {
             connectorSeries.startSize(0.5).endSize(0.5);
@@ -92,8 +92,8 @@ anychart.onDocumentReady(function () {
         .useHtml(true)
         .format(function () {
           return (
-            '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem 0;">From: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b> ' + this.getData('from') +  '</b></h4>' +
-            '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem 0;">Total Visitors: <b> ' +        this.getData('total').toLocaleString() + '</b></h4>'
+            '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem 0;">From: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b> ' + this.getData('from') +  '</b></h4>' +
+            '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem 0;">Visitor Percentage (%): <b> ' +        this.getData('total').toLocaleString() + '</b></h4>'
           );
         });
         
@@ -117,28 +117,28 @@ anychart.onDocumentReady(function () {
         // create five series filtering the data
         // by the absolute values of the migration numbers
         createSeries(
-          'Less than 5,000',
-          dataSet.filter('total', filterFunction(0, 5000)),
+          'Less than 1%',
+          dataSet.filter('total', filterFunction(0, 1)),
           '#FFB36F'
         );
         createSeries(
-          '5,000 to 10,000',
-          dataSet.filter('total', filterFunction(5000, 10000)),
+          '1% to 5%',
+          dataSet.filter('total', filterFunction(1, 5)),
           '#FF7903'
         );
         createSeries(
-          '10,000 to 50,000',
-          dataSet.filter('total', filterFunction(10000, 50000)),
+          '5% to 15%',
+          dataSet.filter('total', filterFunction(5, 15)),
           '#3fb8c5'
         );
         createSeries(
-          '50,000 to 100,000',
-          dataSet.filter('total', filterFunction(50000, 100000)),
+          '15% to 25%',
+          dataSet.filter('total', filterFunction(15, 25)),
           '#1792c0'
         );
         createSeries(
-          'More than 100,000',
-          dataSet.filter('total', filterFunction(100000, 1000000)),
+          'More than 25%',
+          dataSet.filter('total', filterFunction(25, 100)),
           '#1c5eaa'
         );
         
@@ -157,7 +157,7 @@ anychart.onDocumentReady(function () {
           .enabled(true)
           .fontSize(14.5)
           .padding([0, 0, 5, 0])
-          .text('Number of visitors (in the year of 2022)')
+          .text('Percentage of visitors (in the year of 2022)')
           .fontColor('#212121');
 
         // set the container
@@ -179,6 +179,11 @@ vegaEmbed("#bump_chart", bumpChart, {"actions": false}).then(function(result) {}
 // Line Chart
 var lineChart = "json/lineChart.vg.json";
 vegaEmbed("#line_chart", lineChart, {"actions": false}).then(function(result) {}).catch(console.error);
+
+// Overview Chart
+var overviewChart = "json/overviewChart.vg.json";
+vegaEmbed("#overview_chart", overviewChart, {"actions": false}).then(function(result) {}).catch(console.error);
+
 
 // Author details accordion
 var acc = document.getElementsByClassName("accordion");

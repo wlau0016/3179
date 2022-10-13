@@ -55,6 +55,8 @@
             <li><a href = "#empty_3"> Prefecture </a></li>
             <li><a href = "#empty_4"> Cuisine </a></li>
             <li><a href = "#empty_5"> Travel Spending </a></li>
+            <li><a href = "#empty_6"> Temperature </a></li>
+            <li><a href = "#empty_7"> Author </a></li>
         </ul>
     </header>
 
@@ -79,8 +81,6 @@
                 Japan is the most amazing tourist destination and it offers many unique experiences that you cannot find in any other part of the world. 
                 The culture of this country is an interesting blend of Eastern traditions and Western modernity that can be seen everywhere. 
                 Japan is one of the oldest civilizations and has a beautiful and diverse history. 
-                The stunning, diverse scenery with mountains and breathtaking views, which are much appreciated by the Japanese, offers so many different experiences that attract tourists from all corners of the world.
-                In this dashboard, it gives you the visualisations in tourism for your reference to make an interesting and enjoyable trip to this amazing country at least once in your lifetime.
             </p>
         </div>
     </div>
@@ -103,10 +103,10 @@
         </div>
         <div class = "pure-u-6-24">
             <p id = "flowmap_description"> From the map visualisation, most of the visitors come from South East Asia.
-                Vietnamese contribute to the largest number of visitors, <span id = "most_visitor"> 104,860</span>. 
+                Vietnamese contribute to the largest percentage of visitors, <span id = "most_visitor"> 26.68%</span>. 
                 In contrast, except for United States, fewer visitors from the European countries visit Japan in 2022. 
                 This may be due to the large distance gap between their countries and Japan or the expensive flight.
-                For example, there are only <span id = "least_visitor"> 1,011</span> Mexican visit Japan.
+                For example, there are only <span id = "least_visitor"> 0.26%</span> Mexican visit Japan.
                 <br><br><br>
                 <span id = "note_text"> Note: Middle East includes Israel, Turkey and the Gulf Cooperation Council countries 
                     (Saudi Arabia, United Arab Emirates, Bahrain, Oman, Qatar and Kuwait).
@@ -266,7 +266,7 @@
     <!-- Travel Spending Title-->
     <div class = "pure-g">
         <div class = "pure-u-1">
-            <h2 id = "travel_subtitle"> Travel Spending of foreign traveller </h2>
+            <h2 id = "travel_subtitle"> Travel Spending of Taiwanese traveller </h2>
             <hr id = "divider_line_4">
         </div>
     </div>
@@ -281,14 +281,50 @@
         <!-- Travel Spending Description -->
         <div class = "pure-u-1-4">
             <p id = "travel_description"> 
-                Overall, we can see that the travel spending of <span id = "leisure">Leisure</span> is slightly more than 
-                the travel spending of <span id = "business">Business</span>. This may be due to the traveller buying a lot of 
-                souvenirs from the tourist attractions. Furthermore, the consumption cost of those tourist attractions is definitely
-                higher than the ordinary places. In constrast, the <span id = "business">Business</span> traveller mostly spend their money on
-                transportation, food and drinks and accommodation.
+                Overall, we can see that the <span id = "shopping">Shopping</span> spending is always the highest spending over the 9 years.
+                Furthermore, it has increased to <span id = "shopping">59500</span> in 2015 as all the travellers would like to buy
+                a lot of souvenirs for their friends or cousins. In constrast, <span id = "other">Others</span> spending have
+                the smallest amount trend over the 9 years. Surprisingly, <span id = "entertainment">Entertainment</span> is the second 
+                last smallest among the spending categories and just slightly higher than the <span id = "other">Others</span> spending.
             </p>
         </div>
     </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_6"></div>
+
+    <!-- Temperature subtitle -->
+    <div class = "pure-g" id = "temperature_container">
+        <div class = "pure-u-1">
+            <h2 id = "temperature_subtitle"> Japan Temperature </h2>
+            <hr id = "divider_line_7">
+        </div>
+    </div>
+
+    <!-- Temperature chart -->
+    <div class = "pure-g">
+        <div class = "pure-u-1-4">
+            <p id = "temperature_description">
+                From the Overview and Detail chart, we can see that for every end of Spring to end of Autumn, the temperature in Japan
+                is quite high, reach the highest temperature of <span id = "celsius">30.1 (Celsius)</span>. During every Winter, the temperature in Japan 
+                is quite low, the lowest temperature is about <span id = "celsius">-7.7 (Celsius)</span>.
+                Therefore, foreign traveller can consider to visit Japan during Winter if they enjoy the cooling weather or else
+                they might decide to visit Japan during Spring if they want to enjoy the Cherry Blossom.
+                <br>
+                <br>
+                <br>
+                <br>
+                <span id = "selection_on_year">Note: Filter the years you want &#x2192</span>
+            </p>
+        </div>
+        
+        <div class = "pure-u-3-4">
+            <div id = "overview_chart"></div>
+        </div>
+    </div>
+
+    <!-- For Navigation Purpose -->
+    <div id = "empty_7"></div>
 
     <div class = "pure-g" id = "divider_5">
         <div class = "pure-u-1">

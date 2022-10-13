@@ -118,7 +118,7 @@ header {
     transform: translateY(-1%);
     background: url(images/bg-intro.png) center 0 no-repeat;
     background-size: cover;
-    min-height: 405px;
+    min-height: 295px;
     color: #fff;
 }
 
@@ -253,6 +253,7 @@ header.sticky .logo, header.sticky ul li a {
     font-family: 'Abyssinica SIL', serif;
     line-height: 35px;
     font-size: 18px;
+    text-align: left;
 }
 
 #most_visitor{
@@ -360,50 +361,50 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 #tour_guider{
-    width: 225px;
-    height: 375px;
+    width: 170px;
+    height: 275px;
     position:absolute;
-    transform: translate(-625%, 60%);
+    transform: translate(-765%, 98%);
 }
 
 #pin_1{
     width: 18px;
     height: 24px;
     position:absolute;
-    top: 412px;
-    left: 790px;
+    top: 495px;
+    left: 838px;
 }
 
 #pin_2{
     width: 18px;
     height: 24px;
     position:absolute;
-    top: 438px;
-    left: 790px;
+    top: 460px;
+    left: 830px;
 }
 
 #pin_3{
     width: 18px;
     height: 24px;
     position:absolute;
-    top: 450px;
-    left: 803px;
+    top: 513px;
+    left: 855px;
 }
 
 #pin_4{
     width: 18px;
     height: 24px;
     position:absolute;
-    top: 400px;
-    left: 902px;
+    top: 448px;
+    left: 965px;
 }
 
 #pin_5{
     width: 18px;
     height: 24px;
     position:absolute;
-    top: 407px;
-    left: 925px;
+    top: 463px;
+    left: 988px;
 }
 
 .box {
@@ -424,8 +425,8 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 .tokyo{
-    top: 345px;
-    left: 950px;
+    top: 405px;
+    left: 1000px;
 }
 
 .tokyo:after{
@@ -440,8 +441,8 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 .chiba{
-    top: 395px;
-    left: 940px;
+    top: 450px;
+    left: 1005px;
 }
 
 .chiba:after{
@@ -456,8 +457,8 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 .nara{
-    top: 475px;
-    left: 770px;
+    top: 540px;
+    left: 820px;
 }
 
 .nara:after{
@@ -472,8 +473,8 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 .osaka{
-    top: 495px;
-    left: 660px;
+    top: 555px;
+    left: 710px;
 }
 
 .osaka:after{
@@ -488,8 +489,8 @@ header.sticky .logo, header.sticky ul li a {
 }
 
 .kyoto{
-    top: 310px;
-    left: 680px;
+    top: 360px;
+    left: 730px;
 }
 
 .kyoto:after{
@@ -565,6 +566,7 @@ header.sticky .logo, header.sticky ul li a {
 
 #bump_chart{
     margin-left: 25px;
+    margin-right:55px;
 }
 
 #unagi{
@@ -608,6 +610,7 @@ header.sticky .logo, header.sticky ul li a {
 
 #line_chart_container{
     margin-top: 20px;
+    margin-bottom: -15px;
 }
 
 #travel_description{
@@ -616,16 +619,6 @@ header.sticky .logo, header.sticky ul li a {
     font-size: 18px;
     margin-top: 0px;
     margin-right: 80px;
-}
-
-#business{
-    font-weight:bolder;
-    color: #2B44E1;
-}
-
-#leisure{
-    font-weight: bolder;
-    color: #EE7314;
 }
 
 #divider_5{
@@ -648,4 +641,67 @@ header.sticky .logo, header.sticky ul li a {
 #empty_5{
     position:relative;
     top: -20px;
+}
+
+#shopping{
+    font-weight: bolder;
+    color: #FC0237;
+}
+
+#other{
+    color:#1C4BF8;
+    font-weight: bolder;
+}
+
+#entertainment{
+    font-weight: bolder;
+    color: #661FF4;
+}
+
+#temperature_subtitle{
+    font-size: 22px;
+    font-family: 'Roboto Slab', serif;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    padding-top: 45px;
+    text-align: center;
+}
+
+#divider_line_7{
+    width: 90%;
+    color: #000;
+}
+
+#overview_chart{
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+#temperature_description{
+    font-family: 'Abyssinica SIL', serif;
+    line-height: 35px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 85px;
+}
+
+#celsius{
+    color: red;
+    font-weight: bolder;
+}
+
+#selection_on_year{
+    font-style: italic;
+    font-size: 20px;
+}
+
+#empty_6{
+    position:relative;
+    top: -20px;
+}
+
+#empty_7{
+    position:relative;
+    top: 0px;
 }
